@@ -19,6 +19,7 @@ public:
 
 	Pelicula(string, int, int, string, float);
 
+
 	void setNombre(string _nombre);
 	string getNombre();
 	
@@ -40,20 +41,27 @@ public:
 };
 class Horario{
 private:
-	int fecha;
+	string fecha;
 	int horaInicial;
+	int segundaFuncion;
 	int horaFinal;
 
+
 public:
-	Horario(int, int, int);
+	Horario(string, int, int, int);
+	Horario();
 
-
-	void setFecha(int);
-	int getFecha();
+	void setFecha(string);
+	string getFecha();
 	void setHoraInicial(int);
 	int getHoraInicial();
+	void setSegundaFuncion(int);
+	int getSegundaFuncion();
 	void setHoraFinal(int);
 	int getHoraFinal();
+	void toStringHoras();
+	void horas();
+	void toString();
 
 };
 class Sala{
@@ -74,13 +82,27 @@ public:
 	void showArmchairs();
 	bool reserveSeat(int, int);
 	void seatsReserved();
+	int asientos(char);
+	void toString();
 
 };
-class cine {
-
+class Cine {
 private:
+	
 
 public:
+	void reserva();
+	void mantenimiento();
+	void archivo();
+};
+class Factura {
+
+
+
+public:
+
+	void compra(Pelicula, Sala, Horario);
+	void factu();
 
 	/*int elegirPeli();
 	int elegirSala();
