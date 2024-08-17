@@ -1,5 +1,5 @@
 #include "Header.h"
-int menu2;// menu1, menu3, menu4;
+int menu2;
 
 Pelicula p1("Ben_10", 2009, 70, "Estados_Unidos", 8.9);
 Pelicula p2("Dragon_Ball", 2019, 90, "Japon", 9.5);
@@ -18,24 +18,9 @@ Horario h3("1/11/2015", 8, 1, 9);
 Horario vecH[3] = { h1,h2,h3 };
 Horario h4;
 
+Usuario u1;
 Factura f1;
-//cine::cine(){
-//
-//
-//	// for (int i = 0; i < 3; i++) {
-//	//	 p1[i].setPeli(peli[i]);
-//
-//	// }
-//	//for (int i = 0; i < 3; i++) {
-//	//	 h1[i].sethorario(hora[i]);
-//
-//	// }
-//	// for (int i = 0; i < 3; i++) {
-//	//	 s1[i].setSala(saala[i]);
-//
-//	// }
-//
-//}
+
 
 //Toda la clase pelicula
 Pelicula::Pelicula(string _nombre, int _anio, int _duracion, string _pais, float _resenia){
@@ -353,12 +338,38 @@ void Sala::toString() {
 }
 
 
+
+
+//Clase Usuario
+void Usuario::setCodigoCompra(int _codigoCompra)
+{
+	codigoCompra = _codigoCompra;
+}
+int Usuario::getCodigoCompra()
+{
+	return codigoCompra;
+}
+int Usuario::tarjeta(int tarje) {
+	int num_Cifra = 1;
+	while (tarje >= 10) {
+		tarje /= 10;
+		num_Cifra++;
+	}
+	return num_Cifra;
+}
+int Usuario::generador() {
+	return codigoCompra = rand() % 10000 + 1;
+}
+
+
+
+
 //Toda la clase factura
 void Factura::compra(Pelicula p1, Sala s1, Horario h1) {
 	
 	cout << p1.getNombre() << endl;
 	cout << s1.getNumeroSala() << endl;
-	
+	cout << "Su codido de compra es: " << u1.generador() << endl;
 	
 }
 void Factura::factu() {
@@ -366,7 +377,14 @@ void Factura::factu() {
 
 
 }
-
+bool Factura::code(int _codigo) {
+	if (_codigo == u1.getCodigoCompra()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 
 //void cine::factu() {
 //
@@ -783,5 +801,22 @@ void Cine::archivo() {
 		cout << "Muchas gracias por su compra, adios" << endl;
 
 		break;
+	}
+}
+void Cine::venta() {
+	int codigo, tarjeta;
+	cout << "Le recordamos al usuario que primero debe reservar asientos" << endl;
+	cout << "Ingrese el numero de tarjeta: "; cin >> tarjeta;
+	cout << "Ingrese el codigo de compra: "; cin >> codigo;
+	if (u1.tarjeta(tarjeta) == 8) {
+		if (f1.code(codigo)) {
+			cout << "Disfrute su pelicula" << endl;
+		}
+		else {
+			cout << "Codigo incorrecto o aun no ha reservado campos..." << endl;
+		}
+	}
+	else {
+		cout << "El numero de tarjeta es incorrecto..." << endl;
 	}
 }

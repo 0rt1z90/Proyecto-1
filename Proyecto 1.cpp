@@ -26,7 +26,7 @@ int main() {
 		{
 
 		case 1:
-			
+			c1.archivo();
 			
 			break;
 
@@ -44,7 +44,7 @@ int main() {
 				
 
 		case 4:
-		
+			c1.venta();
 			
 			break;
 		}

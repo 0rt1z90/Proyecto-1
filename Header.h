@@ -94,6 +94,7 @@ public:
 	void reserva();
 	void mantenimiento();
 	void archivo();
+	void venta();
 };
 class Factura {
 
@@ -103,6 +104,7 @@ public:
 
 	void compra(Pelicula, Sala, Horario);
 	void factu();
+	bool code(int);
 
 	/*int elegirPeli();
 	int elegirSala();
@@ -110,4 +112,14 @@ public:
 	void factu();
 	void mostrar();*/
 
+};
+
+class Usuario {
+private:
+	int codigoCompra;
+public:
+	void setCodigoCompra(int);
+	int getCodigoCompra();
+	int generador();
+	int tarjeta(int);
 };
