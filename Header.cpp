@@ -214,19 +214,33 @@ void Sala::showArmchairs() {
 	cout << "****************************************************************************************" << endl;
 	cout << "---------PANTALLA-----------";
 	cout << endl << endl;
-	for (int i = 0; i < rows; i++) {
+	cout << "  +";
+	for (int i = 0; i < seating; i++) {
+		cout << "---+";
+	}
+	cout << endl;
 
-		cout << char(65 + i) << "-  ";
+	for (int i = 0; i < seating; i++) {
+		cout << char(65 + i) << " |";
 
 		for (int j = 0; j < seating; j++) {
+			if (seats[i][j] == 1) {
+				cout << "\033[41m 1 \033[0m|";
+			}
+			else {
+				cout << "\033[42m 0 \033[0m|";
+			}
+		}
+		cout << endl;
 
-			cout << seats[i][j] << " ";
+		cout << "  +";
+		for (int i = 0; i < seating; i++) {
+			cout << "---+";
 		}
 		cout << endl;
 	}
 	cout << endl;
-	cout << "    1 " << "2 " << "3 " << "4 " << "5 " << "6 " << "7 " << "8 " << "9 " << "10 ";
-	cout << endl;
+	cout << "    1 " << "  2 " << "  3 " << "  4 " << "  5 " << "  6 " << "  7 " << "  8 " << "  9 " << "  10 " << endl;
 	cout << "****************************************************************************************" << endl;
 }
 bool Sala::reserveSeat(int rowsFake, int seatingFake) {
@@ -339,7 +353,6 @@ void Sala::toString() {
 
 
 
-
 //Clase Usuario
 void Usuario::setCodigoCompra(int _codigoCompra)
 {
@@ -363,13 +376,12 @@ int Usuario::generador() {
 
 
 
-
 //Toda la clase factura
 void Factura::compra(Pelicula p1, Sala s1, Horario h1) {
 	
 	cout << p1.getNombre() << endl;
 	cout << s1.getNumeroSala() << endl;
-	cout << "Su codido de compra es: " << u1.generador() << endl;
+	cout << "Su codigo de compra es: " << u1.generador() << endl;
 	
 }
 void Factura::factu() {
@@ -386,154 +398,6 @@ bool Factura::code(int _codigo) {
 	}
 }
 
-//void cine::factu() {
-//
-//	elegirPeli();
-//	elegirSala();
-//	elegirHora();
-//
-//	for (int i = 0; i < 3; i++) {
-//		if (s1[i].getSala() - 1 == i) {
-//			cout << "La sala es: " << s1[i].getSala();
-//		}
-//		if (h1[i].gethorario() - 1 == i) {
-//			cout << "La sala es: " << h1[i].gethorario();
-//		}
-//	}
-//
-//}
-//int cine::elegirHora() {
-//	int menu;
-//	cout << endl;
-//	cout << "Ingrese la hora: " << endl;
-//	for (int i = 0; i < 3; i++) {
-//		cout << i + 1 << "- " << h1[i].gethorario() << endl;
-//	}
-//	cin >> menu;
-//	switch (menu) {
-//	case 1:
-//		return menu;
-//		break;
-//	case 2:
-//		return menu;
-//		break;
-//	case 3:
-//		return menu;
-//		break;
-//	}
-//	cout << endl;
-//}
-//int cine::elegirSala() {
-//	int menu;
-//	cout << endl;
-//	cout << "Ingrese la sala que desea: " << endl;
-//	for (int i = 0; i < 3; i++) {
-//		cout << i + 1 << "- " << s1[i].getSala() << endl;
-//	}
-//	cin >> menu;
-//	switch (menu) {
-//	case 1:
-//
-//		return menu;
-//		break;
-//	case 2:
-//
-//		return menu;
-//		break;
-//	case 3:
-//
-//		return menu;
-//		break;
-//	}
-//	cout << endl;
-//}
-//int cine::elegirPeli() {
-//
-//	cout << endl;
-//	int menu;
-//	cout << "Ingrese la pelicula que desea: " << endl;
-//	for (int i = 0; i < 3; i++) {
-//		cout << i + 1 << "- " << p1[i].getpeli() << endl;
-//	}
-//	cin >> menu;
-//	switch (menu) {
-//	case 1:
-//
-//		return menu;
-//		break;
-//	case 2:
-//
-//		return menu;
-//		break;
-//	case 3:
-//
-//		return menu;
-//		break;
-//	}
-//	cout << endl;
-//}
-
-//void Cine::elegirP()
-//{
-//
-//	int auxP, auxS;
-//	cout << "*******************************************************" << endl;
-//	cout << "BIENBENIDO A LA COMPRA DE VOLETOS" << endl;
-//	cout << "Elija una  pelicula de las siguientes:" << endl;
-//	cout << "1- Ben 10" << endl;
-//	cout << "2- Dragon Ball" << endl;
-//	cout << "3- Naruto" << endl;
-//	cin >> auxP;
-//	
-//	for (int i = 0; i < 3; i++) {
-//		if (vecPp[i] == auxP-1) {
-//			pElejida=vecP[i];
-//	    }
-//	}
-//
-//	cout << endl << endl;
-//cout << "Elija la sala:" << endl;
-//	cout << "1- S1" << endl;
-//	cout << "2- S2" << endl;
-//	cout << "3- S3" << endl;
-//	cin >> auxS;
-//
-//	for (int i = 0; i < 3; i++) {
-//		if (vecSs[i] == auxS - 1) {
-//			sElejida = vecS[i];
-//		}
-//	}
-//
-//	cout << endl << endl;
-//	
-//	int i;
-//	for (i = 0; i < 3; i++) {
-//		cout << i << " ";
-//		if (((auxP - 1) == 0) && ((auxP-1) != 1 && (auxP - 1) != 2)) {
-//			cout << "Elija el horario que desea:" << endl;
-//			cout << "1- 7:00am" << endl;
-//			cout << "2- 12:30md" << endl;
-//			cout << "3- 5:00pm" << endl;
-//
-//		}
-//		else if (((auxP - 1) == 1) && ((auxP - 1) != 0 && (auxP - 1) != 2)) {
-//			cout << "Elija el horario que desea:" << endl;
-//			cout << "1- 7:00am" << endl;
-//			cout << "2- 9:30am" << endl;
-//			cout << "3- 6:00pm" << endl;
-//
-//
-//		}
-//		else if (((auxP - 1) == 2) && ((auxP - 1) != 1 && (auxP - 1) != 0)) {
-//			cout << "Elija el horario que desea:" << endl;
-//			cout << "1- 8:00am" << endl;
-//			cout << "2- 1:pm" << endl;
-//			cout << "3- 9:00pm" << endl;
-//
-//
-//		}
-//	}
-//}
 
 void Cine::reserva()
 {
@@ -562,7 +426,7 @@ void Cine::reserva()
 			h1.horas();
 			cin >> menu2;//8
 			s5.showArmchairs();
-			s5.seatsReserved();
+			
 
 			char reserve;
 			cout << "Desea procesar la compra? Y/N" << endl;
@@ -570,7 +434,7 @@ void Cine::reserva()
 
 			if (reserve == 'Y' || reserve == 'y') {
 
-
+				s5.seatsReserved();
 				f1.compra(p1, s1, h1);
 			}
 			else {
@@ -585,12 +449,13 @@ void Cine::reserva()
 			h1.horas();
 			cin >> menu2;//8
 			s6.showArmchairs();
-			s6.seatsReserved();
+			
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 
 			if (reserve == 'Y' || reserve == 'y') {
+				s6.seatsReserved();
 				f1.compra(p1, s2, h2);
 			}
 			else {
@@ -603,13 +468,14 @@ void Cine::reserva()
 			cout << "Elija el horario que desea:" << endl;
 			h1.horas();
 			cin >> menu2;//8
-			s7.showArmchairs();
+			
 			s7.seatsReserved();
 
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s7.showArmchairs();
 				f1.compra(p1, s3, h3);
 			}
 			else {
@@ -638,11 +504,12 @@ void Cine::reserva()
 			h2.horas();
 			cin >> menu2;//6
 			s8.showArmchairs();
-			s8.seatsReserved();
+			
 			char reserve;
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s8.seatsReserved();
 				f1.compra(p2, s1, h1);
 			}
 			else {
@@ -656,11 +523,12 @@ void Cine::reserva()
 			h2.horas();
 			cin >> menu2;//6
 			s9.showArmchairs();
-			s9.seatsReserved();
+			
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s9.seatsReserved();
 				f1.compra(p2, s2, h2);
 			}
 			else {
@@ -673,11 +541,12 @@ void Cine::reserva()
 			h2.horas();
 			cin >> menu2;//6
 			s10.showArmchairs();
-			s10.seatsReserved();
+			
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s10.seatsReserved();
 				f1.compra(p2, s3, h3);
 			}
 			else {
@@ -703,11 +572,12 @@ void Cine::reserva()
 			h3.horas();
 			cin >> menu2;//7
 			s11.showArmchairs();
-			s11.seatsReserved();
+			
 			char reserve;
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s11.seatsReserved();
 				f1.compra(p3, s1, h1);
 			}
 			else {
@@ -720,11 +590,12 @@ void Cine::reserva()
 			h3.horas();
 			cin >> menu2;//7
 			s12.showArmchairs();
-			s12.seatsReserved();
+			
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s12.seatsReserved();
 				f1.compra(p3, s2, h2);
 			}
 			else {
@@ -737,11 +608,12 @@ void Cine::reserva()
 			h3.horas();
 			cin >> menu2;//7
 			s13.showArmchairs();
-			s13.seatsReserved();
+			
 
 			cout << "Desea procesar la compra? Y/N" << endl;
 			cin >> reserve;
 			if (reserve == 'Y' || reserve == 'y') {
+				s13.seatsReserved();
 				f1.compra(p3, s3, h3);
 			}
 			else {
