@@ -655,25 +655,7 @@ void Cine::mantenimiento() {
 	}
 }
 void Cine::archivo() {
-	int menu3;
-
-
-	cout << "1-Acerca de" << endl;
-	cout << "2-Salir del sistema" << endl;
-	cout << "Elija opciones entre 1-2" << endl;
-	cin >> menu3;
-
-	switch (menu3) {
-	case 1:
-		cout << "El estudiante encargado de crear el sistema de voleteria se llama Kendall Ortiz, cursa ING en sistemas en la UNA" << endl;
-		break;
-
-	case 2:
-		cout << endl;
-		cout << "Muchas gracias por su compra, adios" << endl;
-
-		break;
-	}
+	cout << "El estudiante encargado de crear el sistema de voleteria se llama Kendall Ortiz, cursa ING en sistemas en la UNA" << endl;
 }
 void Cine::venta() {
 	int codigo, tarjeta;

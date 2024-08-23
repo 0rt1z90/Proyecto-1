@@ -13,7 +13,7 @@ int main() {
 	
 	do {
 		cout << "************************************************" << endl;
-		cout << "1-Archivo" << endl;
+		cout << "1-Arch111ivo" << endl;
 		cout << "2-Mantenimiento" << endl;
 		cout << "3-Reserva" << endl;
 		cout << "4-Venta" << endl;
@@ -25,8 +25,20 @@ int main() {
 		{
 
 		case 1:
-			c1.archivo();
-			
+			int menu3;
+
+			cout << "1-Acerca de" << endl;
+			cout << "2-Salir del sistema" << endl;
+			cout << "Elija opciones entre 1-2" << endl;
+			cin >> menu3;
+			if (menu3 == 1) {
+				c1.archivo();
+			}
+			else if (menu3 == 2) {
+				cout << "Muchas gracias por su compra, adios" << endl;
+				return 0;
+			}
+
 			break;
 
 
