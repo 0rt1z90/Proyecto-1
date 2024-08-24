@@ -127,12 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Header.cpp" />
+    <ClCompile Include="Cine.cpp" />
+    <ClCompile Include="Factura.cpp" />
+    <ClCompile Include="Horario.cpp" />
+    <ClCompile Include="Pelicula.cpp" />
     <ClCompile Include="Proyecto 1.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Sala.cpp" />
+    <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="Cine.h" />
+    <ClInclude Include="Factura.h" />
+    <ClInclude Include="Horario.h" />
+    <ClInclude Include="Pelicula.h" />
+    <ClInclude Include="Sala.h" />
+    <ClInclude Include="Usuario.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
