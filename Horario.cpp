@@ -1,4 +1,5 @@
 #include "Horario.h"
+#include "Colores.h"
 
 Horario::Horario(string _fecha, int _horaInicial, int _segundaFuncion, int _horaFinal) {
     fecha = _fecha;
@@ -46,28 +47,19 @@ int Horario::getHoraFinal() {
     return horaFinal;
 }
 
-void Horario::toStringHoras() {
-    cout << "////////////////////////////////////////////////////////" << endl;
-    cout << "Fecha: " << fecha << endl;
-    cout << "Primera funcion: " << horaInicial << endl;
-    cout << "Ultima funcion: " << horaFinal << " minutos" << endl;
-    cout << "////////////////////////////////////////////////////////" << endl;
-}
-
 void Horario::horas() {
+
     cout << "Primer horario " << horaInicial << "am" << endl;
     cout << "Segundo horario " << segundaFuncion << "pm" << endl;
     cout << "Tercer horario " << horaFinal << "pm" << endl;
     cout << "***************************************" << endl;
 }
 
-void Horario::toString(Pelicula vecP[], Horario vecH[]) {
-    cout << "El horario de las peliculas son: " << endl;
+void Horario::toString(Pelicula vecP[], Horario vecH[], int i) {
+    cout <<BLUE<< "El horario de las peliculas son: "<<RESET << endl;
 
-    for (int i = 0; i < 3; i++) {
-        cout << vecP[i].getNombre() << endl;
-        vecH[i].horas();
-
-    }
+            cout << vecP[i].getNombre() << endl;
+            vecH[i].horas();
+       
 
 }

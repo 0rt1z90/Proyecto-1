@@ -1,6 +1,7 @@
 #include "Sala.h"
 #include <cstdlib>
 #include <ctime>
+#include "Colores.h"
 
 
 
@@ -68,10 +69,10 @@ void Sala::showArmchairs() {
 
         for (int j = 0; j < seating; j++) {
             if (seats[i][j] == 1) {
-                cout << "\033[41m 1 \033[0m|";
+                cout << "\033[41m   \033[0m|";
             }
             else {
-                cout << "\033[42m 0 \033[0m|";
+                cout << "\033[42m   \033[0m|";
             }
         }
         cout << endl;
@@ -121,13 +122,13 @@ void Sala::seatsReserved() {
     seatingFake--;
 
     if (reserveSeat(asientos(rowsFake), seatingFake)) {
-        cout << "Asiento reservado con exito" << endl;
+        cout << BLUE << "Asiento reservado con exito" << RESET << endl;
         auxRows = asientos(rowsFake);
         auxSeating = seatingFake;
 
     }
     else {
-        cout << "Asiento ocupado" << endl << endl;
+        cout << RED << "Asiento ocupado" << RESET << endl << endl;
     }
 
 }

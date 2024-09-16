@@ -30,9 +30,8 @@ public:
     void setHoraFinal(int);
     int getHoraFinal();
 
-    void toStringHoras();
     void horas();
-    void toString(Pelicula[], Horario[]);
+    void toString(Pelicula[], Horario[], int);
 };
 
 #endif

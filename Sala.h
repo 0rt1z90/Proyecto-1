@@ -36,6 +36,7 @@ public:
     void seatsReserved();
     void vaciar();
 
+    
 };
 
 

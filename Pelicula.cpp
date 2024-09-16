@@ -1,6 +1,7 @@
 #include "Pelicula.h"
+#include "Colores.h"
 
-Pelicula::Pelicula(string _nombre, int _anio, int _duracion, string _pais, float _resenia) {
+Pelicula::Pelicula(string _nombre, int _anio, int _duracion, string _pais, string _resenia) {
     nombre = _nombre;
     anio = _anio;
     duracion = _duracion;
@@ -40,11 +41,11 @@ string Pelicula::getPais() {
     return pais;
 }
 
-void Pelicula::setResenia(float _resenia) {
+void Pelicula::setResenia(string _resenia) {
     resenia = _resenia;
 }
 
-float Pelicula::getResenia() {
+string Pelicula::getResenia() {
     return resenia;
 }
 
@@ -54,6 +55,6 @@ void Pelicula::toString() {
     cout << "Anio de lanzamiento: " << anio << endl;
     cout << "Duracion(MIN): " << duracion << " minutos" << endl;
     cout << "Pais de origen: " << pais << endl;
-    cout << "Resenia obtenida: " << resenia << endl;
+    cout << BLUE << "Resenia: " << resenia << RESET << endl;
     cout << "////////////////////////////////////////////////////////" << endl;
 }

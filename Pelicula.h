@@ -13,10 +13,10 @@ private:
     int anio;
     int duracion;
     string pais;
-    float resenia;
+    string resenia;
 
 public:
-    Pelicula(string, int, int, string, float);
+    Pelicula(string, int, int, string, string);
 
     void setNombre(string _nombre);
     string getNombre();
@@ -30,8 +30,8 @@ public:
     void setPais(string _pais);
     string getPais();
 
-    void setResenia(float _resenia);
-    float getResenia();
+    void setResenia(string _resenia);
+    string getResenia();
 
     void toString();
 };

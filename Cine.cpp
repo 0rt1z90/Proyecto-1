@@ -1,10 +1,11 @@
 #include "Cine.h"
+#include "Colores.h"
 
 using namespace std;
 
 Usuario u1;
 Factura f1;
-Sala s5, s6, s7, s8, s9, s10, s11, s12, s13;
+Sala  s5, s6, s7, s8, s9, s10, s11, s12, s13 ;
 int indiceP = 0, indiceS = 0;
 
 int menu1;
@@ -20,7 +21,7 @@ void Cine::reserva(Pelicula peliculas[], Sala salas[], Horario horarios[]) {
 	}
 	cin >> menu2;
 
-	switch (menu2) {//4
+	switch (menu2) {
 	case 1:
 
 		indiceP = 1;
@@ -28,7 +29,7 @@ void Cine::reserva(Pelicula peliculas[], Sala salas[], Horario horarios[]) {
 		for (int i = 0; i < 3; i++) {
 			cout << i + 1 << "- " << salas[i].getNumeroSala() << endl;
 		}
-		cin >> menu2;//5
+		cin >> menu2;
 
 		switch (menu2) {
 
@@ -36,7 +37,7 @@ void Cine::reserva(Pelicula peliculas[], Sala salas[], Horario horarios[]) {
 			indiceS = 1;
 			cout << "Elija el horario que desea:" << endl;
 
-			cin >> menu2;//8
+			cin >> menu2;
 			s5.showArmchairs();
 
 
@@ -75,7 +76,7 @@ void Cine::reserva(Pelicula peliculas[], Sala salas[], Horario horarios[]) {
 
 			cout << "Elija el horario que desea:" << endl;
 
-			cin >> menu2;//8
+			cin >> menu2;
 			s6.showArmchairs();
 
 
@@ -108,7 +109,7 @@ void Cine::reserva(Pelicula peliculas[], Sala salas[], Horario horarios[]) {
 			indiceS = 3;
 			cout << "Elija el horario que desea:" << endl;
 
-			cin >> menu2;//8
+			cin >> menu2;
 			s7.showArmchairs();
 
 
@@ -385,7 +386,7 @@ void Cine::mantenimiento(Pelicula peliculas[], Horario horarios[], Sala salas[])
 
 	case 2:
 
-		cout << "Las salas disponibles son las siguientes: " << endl;
+		cout << BLUE << "Las salas disponibles son las siguientes: " << RESET << endl;
 		for (int i = 0; i < 3; i++) {
 			salas[i].toString();
 		}
@@ -393,7 +394,7 @@ void Cine::mantenimiento(Pelicula peliculas[], Horario horarios[], Sala salas[])
 
 	case 3:
 		for (int i = 0; i < 3; i++) {
-			horarios[i].toString(peliculas, horarios);
+			horarios[i].toString(peliculas, horarios, i);
 		}
 		break;
 	}
@@ -408,25 +409,25 @@ void Cine::archivo() {
 void Cine::venta(Factura f1, Usuario u1) {
 
 	int codigo, tarjeta, cedula;
-	cout << "Le recordamos al usuario que primero debe reservar asientos" << endl;
-	cout << "Ingrese su cedula: "; cin >> cedula;
-	cout << "Ingrese el numero de tarjeta: "; cin >> tarjeta;
+	cout << RED << "Le recordamos al usuario que primero debe reservar asientos" << RESET << endl;
+	cout << "Ingrese su cedula" << RED << "(9 digitos): " << RESET; cin >> cedula;
+	cout << "Ingrese el numero de tarjeta" << RED << "(8 digitos): " << RESET; cin >> tarjeta;
 	cout << "Ingrese el codigo de compra: "; cin >> codigo;
 	if (u1.cedula(cedula) == 9) {
 		if (u1.tarjeta(tarjeta) == 8) {
 			if (f1.code(codigo, u1)) {
-				cout << "Disfrute su pelicula" << endl;
+				cout << CYAN << "Disfrute su pelicula" << RESET << endl;
 			}
 			else {
-				cout << "Codigo incorrecto o aun no ha reservado campos..." << endl;
+				cout << RED << "Codigo incorrecto o aun no ha reservado campos..." << RESET << endl;
 			}
 		}
 		else {
-			cout << "El numero de tarjeta es incorrecto..." << endl;
+			cout << RED << "El numero de tarjeta es incorrecto..." << RESET << endl;
 		}
 	}
 	else {
-		cout << "El numero de cedula es incorrecto..." << endl;
+		cout << RED << "El numero de cedula es incorrecto..." << RESET << endl;
 	}
 }
 

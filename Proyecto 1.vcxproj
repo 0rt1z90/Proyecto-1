@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cine.h" />
+    <ClInclude Include="Colores.h" />
     <ClInclude Include="Factura.h" />
     <ClInclude Include="Horario.h" />
     <ClInclude Include="Pelicula.h" />
