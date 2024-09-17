@@ -18,51 +18,51 @@
     <ClCompile Include="Proyecto 1.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Cine.cpp">
+    <ClCompile Include="Cinema.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Usuario.cpp">
+    <ClCompile Include="User.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Sala.cpp">
+    <ClCompile Include="Room.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Factura.cpp">
+    <ClCompile Include="Invoice.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Horario.cpp">
+    <ClCompile Include="Schedule.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Pelicula.cpp">
+    <ClCompile Include="Movie.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Asiento.cpp">
+    <ClCompile Include="Seat.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cine.h">
+    <ClInclude Include="Cinema.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Usuario.h">
+    <ClInclude Include="User.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Sala.h">
+    <ClInclude Include="Room.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Factura.h">
+    <ClInclude Include="Invoice.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Horario.h">
+    <ClInclude Include="Schedule.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Pelicula.h">
+    <ClInclude Include="Movie.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Colores.h">
+    <ClInclude Include="Colors.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Asiento.h">
+    <ClInclude Include="Seat.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
