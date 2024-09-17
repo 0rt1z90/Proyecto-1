@@ -1,65 +1,85 @@
 #include "Horario.h"
 #include "Colores.h"
 
-Horario::Horario(string _fecha, int _horaInicial, int _segundaFuncion, int _horaFinal) {
-    fecha = _fecha;
-    horaInicial = _horaInicial;
-    segundaFuncion = _segundaFuncion;
-    horaFinal = _horaFinal;
-}
-
 Horario::Horario() {
     fecha = " ";
-    horaInicial = 0;
+    primeraFuncion = 0;
     segundaFuncion = 0;
-    horaFinal = 0;
+    funcionFinal = 0;
 }
 
-void Horario::setFecha(string _fecha) {
-    fecha = _fecha;
+Horario::Horario(int h, int m)
+{
+    hora = h;
+    minutos = m;
+    if (hora <= 12) {
+        periodo = "AM";
+    }
+    else if (hora > 12 && hora < 24) {
+        periodo = "PM";
+    }
+
 }
 
-string Horario::getFecha() {
-    return fecha;
+void Horario::horas(Horario h1[]) {
+    cout << MAGENTA << "Elija el horario que desea:" << RESET << endl;
+
+    for (int i = 0; i < 2; i++) {
+        cout << 1 + i << "- "; h1[i].mostrarHorario();
+    }
 }
 
-void Horario::setHoraInicial(int _horaInicial) {
-    horaInicial = _horaInicial;
-}
+void Horario::toString(Pelicula vecP[], Horario vecBen[], Horario vecDb[], Horario vecNa[]) {
 
-int Horario::getHoraInicial() {
-    return horaFinal;
-}
-
-void Horario::setSegundaFuncion(int _segundaFuncion) {
-    segundaFuncion = _segundaFuncion;
-}
-
-int Horario::getSegundaFuncion() {
-    return segundaFuncion;
-}
-
-void Horario::setHoraFinal(int _horaFinal) {
-    horaFinal = _horaFinal;
-}
-
-int Horario::getHoraFinal() {
-    return horaFinal;
-}
-
-void Horario::horas() {
-
-    cout << "Primer horario " << horaInicial << "am" << endl;
-    cout << "Segundo horario " << segundaFuncion << "pm" << endl;
-    cout << "Tercer horario " << horaFinal << "pm" << endl;
-    cout << "***************************************" << endl;
-}
-
-void Horario::toString(Pelicula vecP[], Horario vecH[], int i) {
     cout <<BLUE<< "El horario de las peliculas son: "<<RESET << endl;
 
-            cout << vecP[i].getNombre() << endl;
-            vecH[i].horas();
-       
+     cout << vecP[0].getNombre();
+    cout << endl;
+    for (int i = 0; i < 2; i++) {
 
+        vecBen[i].mostrarHorario();
+    }
+    cout << endl;
+    cout << vecP[1].getNombre();
+    cout << endl;
+    for (int i = 0; i < 2; i++) {
+
+        vecDb[i].mostrarHorario();
+    }
+
+    cout << endl;
+    cout << vecP[2].getNombre();
+    cout << endl;
+    for (int i = 0; i < 2; i++) {
+
+        vecNa[i].mostrarHorario();
+    }
+       
+}
+
+int Horario::getMinutos() {
+    return minutos;
+}
+
+int Horario::getHora() {
+    return hora;
+}
+
+void Horario::mostrarHorario() {
+
+    if (hora < 10) {
+        cout << "0" << hora << ":";
+    }
+    else {
+        cout << hora << ":";
+    }
+    if (minutos < 10) {
+        cout << "0" << minutos << ":";
+    }
+    else {
+        cout << minutos << ":";
+    }
+    cout << periodo;
+
+    cout << endl;
 }

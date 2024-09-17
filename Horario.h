@@ -2,7 +2,6 @@
 #ifndef HORARIO_H
 #define HORARIO_H
 
-
 #include <iostream>
 #include "Pelicula.h"
 using namespace std;
@@ -10,28 +9,24 @@ using namespace std;
 class Horario {
 private:
     string fecha;
-    int horaInicial;
+    int primeraFuncion;
     int segundaFuncion;
-    int horaFinal;
-
+    int funcionFinal;
+    int hora;
+    int minutos;
+    string periodo;
 public:
-    Horario(string, int, int, int);
+    
     Horario();
+    Horario(int, int);
 
-    void setFecha(string);
-    string getFecha();
+    void mostrarHorario();
 
-    void setHoraInicial(int);
-    int getHoraInicial();
+    int getHora();
+    int getMinutos();
 
-    void setSegundaFuncion(int);
-    int getSegundaFuncion();
-
-    void setHoraFinal(int);
-    int getHoraFinal();
-
-    void horas();
-    void toString(Pelicula[], Horario[], int);
+    void horas(Horario[]);
+    void toString(Pelicula[], Horario[], Horario[], Horario[]);
 };
 
 #endif

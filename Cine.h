@@ -7,22 +7,19 @@
 #include "Horario.h"
 #include "Usuario.h"
 #include "Factura.h"
-
-
+#include "Asiento.h"
+#include "Colores.h"
+#include <time.h>
 
 class Cine {
 
-
-
 public:
 
-
-
-    void reserva(Pelicula[], Sala[], Horario[]);
-    void mantenimiento(Pelicula[], Horario[], Sala[]);
+    void reserva(Pelicula[], Sala[], Horario[], Horario[], Horario[]);
+    void mantenimiento(Pelicula[], Horario[], Horario[], Horario[], Sala[]);
     void archivo();
     void venta(Factura, Usuario);
-    int menu(Pelicula peliculas[], Sala salas[], Horario horarios[]);
+    int menu(Pelicula peliculas[], Sala salas[], Horario horarios[], Horario[], Horario[] );
 };
 
 #endif

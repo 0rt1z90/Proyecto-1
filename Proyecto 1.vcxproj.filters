@@ -36,6 +36,9 @@
     <ClCompile Include="Pelicula.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Asiento.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cine.h">
@@ -57,6 +60,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Colores.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Asiento.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

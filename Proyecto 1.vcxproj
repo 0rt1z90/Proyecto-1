@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asiento.cpp" />
     <ClCompile Include="Cine.cpp" />
     <ClCompile Include="Factura.cpp" />
     <ClCompile Include="Horario.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asiento.h" />
     <ClInclude Include="Cine.h" />
     <ClInclude Include="Colores.h" />
     <ClInclude Include="Factura.h" />

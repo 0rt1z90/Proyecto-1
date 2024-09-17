@@ -3,12 +3,14 @@
 #define FACTURA_H
 #include "Pelicula.h"
 #include "Usuario.h"
+#include "Colores.h"
 #include "Sala.h"
+#include "Horario.h"
 
 class Factura {
 public:
 
-    void compra(Pelicula, Sala, Usuario);
+    void compra(Pelicula, Usuario, Sala ,Horario);
 
     bool code(int, Usuario);
 

@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-
 const string RESET = "\033[0m";
 const string BOLD = "\033[1m";
 const string UNDERLINE = "\033[4m";
