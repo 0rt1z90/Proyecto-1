@@ -94,7 +94,8 @@ void Cinema::reservation(Movie movies[], Room rooms[], Schedule benSchedules[], 
 					seat1.showSeats();
 					user.generate();
 					seat1.reservedSeats(invoice, seat1, user, movies, rooms, benSchedules, movieIndex, roomIndex, timeIndex);
-
+					
+					
 				}
 				else {
 
@@ -379,7 +380,7 @@ void Cinema::sale(Invoice f1, User u1) {
 
 	if (user.card(id) == 9) {//Verifica la cedula
 		if (user.card(card) == 8) {//Verifica la tarjeta
-			if (invoice.verifyCode(code, u1)) {//Verificael codigo
+			if (invoice.verifyCode(code, u1)) {//Verifica el codigo
 				cout << CYAN << "Disfrute su pelicula" << RESET << endl;
 			}
 			else {
@@ -398,7 +399,7 @@ void Cinema::sale(Invoice f1, User u1) {
 }
 
 int Cinema::menu(Movie movies[], Room rooms[], Schedule benSchedules[], Schedule dbSchedules[], Schedule naSchedules[]) {
-
+	
 	do {
 		cout << "************************************************" << endl;
 		cout << "1-Arhivo" << endl;

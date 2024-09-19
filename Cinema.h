@@ -8,7 +8,7 @@
 #include "Colors.h"
 #include <time.h>
 
-class Cinema {
+class Cinema : public Seat {
 
 public:
 

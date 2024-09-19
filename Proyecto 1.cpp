@@ -15,7 +15,7 @@ Movie m3("Naruto", 2015, 86, "Japan", "Naruto es una serie de anime y manga crea
 Room r1(23, 3500);
 Room r2(20, 1500);
 
-Schedule s1(14, 59);
+Schedule s1(9, 40);
 Schedule s2(9, 30);
 Schedule s3(10, 0);
 Schedule s4(13, 32);

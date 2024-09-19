@@ -9,22 +9,23 @@ using namespace std;
 
 class Seat {
 
-private:
-    int rows, seats; 
-    int auxRows, auxSeats; 
+protected:
+    int rows, seats;
+    int auxRows, auxSeats;
     int seatMatrix[6][6];
 
 public:
-    Seat(); 
+    Seat();
 
-    void showSeats(); 
+    void showSeats();
 
-    bool reserveSeat(int _row, int _seat); 
+    bool reserveSeat(int _row, int _seat);
 
     void clear();
 
-    void reservedSeats(Invoice, Seat& s, User, Movie[], Room[], Schedule[], int, int, int); 
+    void reservedSeats(Invoice, Seat& s, User, Movie[], Room[], Schedule[], int, int, int);
 
-    int getSeatNumber(char _row); 
+    int getSeatNumber(char _row);
 
+    void cancelReservation(int row, int seat);
 };
